@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "xmas-present-exchange",
-    "version": "0.0.0"
+    "version": "0.1.0"
   },
   "tauri": {
     "allowlist": {
@@ -56,10 +56,10 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
-        "resizable": true,
-        "title": "xmas-present-exchange",
-        "width": 960 
+        "height": 700,
+        "resizable": false,
+        "title": "xmas present exchange assistant",
+        "width": 1200 
       }
     ]
   }

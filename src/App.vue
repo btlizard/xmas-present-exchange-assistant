@@ -5,8 +5,19 @@ import drawPlayer from "./components/drawPlayer.vue"
 </script>
 
 <template>
-  <div class="container">
-    <drawPlayer/>
+  <div class=" bg-primary bg">
+    <q-layout view="lhh LpR lff" container >
+      <div data-tauri-drag-region class="bg-primary">
+        <q-header class="navbar left">
+          <!-- <q-btn-group class="q-pa-md" >
+            <q-btn round label="about" color="mgray" size="xs" />
+          </q-btn-group> -->
+        </q-header>
+      </div>
+      <q-page-container class="container">
+        <drawPlayer/>
+      </q-page-container>
+    </q-layout>
   </div>
 </template>
 
@@ -17,5 +28,12 @@ import drawPlayer from "./components/drawPlayer.vue"
 
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #249b73);
+}
+
+.bg {
+  height: 700px;
+}
+.navbar {
+  height: 30px;
 }
 </style>

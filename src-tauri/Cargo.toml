@@ -18,6 +18,9 @@ serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
 tauri = { version = "1.1", features = ["api-all"] }
 rand = { version ="0.8", feature = [] }
+csv = { version = "1.1", features = [] }
+rusqlite = { version = "0.28", features = ["bundled"] }
+rusty-leveldb = { version = "1", features = [] }
 
 [features]
 # by default Tauri runs in production mode
