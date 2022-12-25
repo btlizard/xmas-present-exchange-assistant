@@ -1,7 +1,12 @@
-# Tauri + Vue 3
+# Xmas Present Exchange Assistant
 
-This template should help get you started developing with Tauri + Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This tool is for random present exchange sequence.
 
-## Recommended IDE Setup
+## How to use 
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+### Step 1
+add player to the list, each player name could only add once, you can delete the player by click the close icon at the right of the player name.
+
+### Step 2
+Click start shuffle button to shaffle players, click draw player to decide the next player. The player should get present from the last choosen player. Undefined position will has 'who?' text. 
+The carousel shows each exchange direction. You will not see the player shuffle if the slide is in wrong page.

@@ -44,8 +44,11 @@
           <q-carousel-slide :name="1" class="column no-wrap">
             <div vertical class="row fit justfy-start items-center q-gutter-xs q-col-gutter no-wrap">
               <q-card  class="name-card-l bg-secondary text-white q-py-md">
-                <q-card-section class="">
+                <q-card-section v-if="drawedPlayers.length > 0">
                   <div class="text-h2">{{ drawedPlayers[0] }}</div>
+                </q-card-section>
+                <q-card-section v-if="drawedPlayers.length === 0">
+                  <div class="text-h2">Merry Christmas</div>
                 </q-card-section>
               </q-card>
             </div>
@@ -76,8 +79,8 @@
         </q-carousel>
       </div>
       <div class="q-pa-md q-gutter-sm">
-        <q-btn :disable="btnDisable" align="between" class="btn-fixed-width" @click="run" label="start shuffle" icon="shuffle" color="secondary"/>
-        <q-btn :disable="btnDisable" align="between" class="btn-fixed-width" @click="draw" label="draw player" icon="card_giftcard" color="secondary"/>
+        <q-btn :disable="drawID > drawedPlayers.length - 2 ? true : false" align="between" class="btn-fixed-width" @click="run" label="start shuffle" icon="shuffle" color="secondary"/>
+        <q-btn :disable="drawID > drawedPlayers.length - 2 ? true : false" align="between" class="btn-fixed-width" @click="draw" label="draw player" icon="card_giftcard" color="secondary"/>
       </div>
     </div>
   </div>
@@ -118,7 +121,6 @@ const btnDisable = ref(false)
 
 async function getPlayers() {
   players.value = await invoke("get_players")
-  console.log(players.value)
   for (let p of players.value) {
     drawedPlayers.value.push("who?")
     candidates.push(p)
@@ -218,12 +220,12 @@ onMounted(() => {
 .btn-fixed-width
   width: 180px
 .chip-player
-  width: 150px
+  min-width: 150px
 .step-title
   color: white
 .name-card
   width: 230px
   text-align: center
 .name-card-l
-  width: 300px
+  min-width: 300px
 </style>
